@@ -20,3 +20,28 @@ age:22,
 const myFucntion = function(){
     console.log("demo")
 }
+
+
+//=========================================================
+
+//Stack memnor
+
+let myhomeName = "juniIndore"
+let anotherName = myhomeName
+anotherName = "punehome"
+
+let userOne = {
+    email:"userone@yahoo.com",
+    name:"one"
+}
+
+let userTwo = userOne
+
+console.log(userTwo)
+
+//now if we chnage the value through userTwo
+
+userTwo.email = "userone@google.com"
+console.log("after");
+console.log(userOne)
+console.log(userTwo)
