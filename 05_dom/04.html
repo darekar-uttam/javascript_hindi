@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #ffff;">
+    <ul class="langauge">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const li =  document.createElement("li")
+       li.innerHTML = `${langName}`
+       document.querySelector('.langauge').appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("Typescript")
+
+    function addOptiMethod(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.langauge').appendChild(li)
+    }
+    addOptiMethod("ruby")
+
+    //edit
+    const secLang = document.querySelector("li:nth-child(2)")
+    // secLang.innerHTML = "rust" not a optimiszed method
+   const newLi =  document.createElement("li")
+   newLi.textContent = "Rust"
+   secLang.replaceWith(newLi)
+
+   //edit_2
+
+   const thirdLand = document.querySelector("li:nth-child(3)")
+   thirdLand.outerHTML = "<li>GoLang</li>"
+
+   //remove
+   const removeThird = document.querySelector('li:last-child')
+   removeThird.remove()
+</script>
+
+</html>
