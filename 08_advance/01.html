@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <div class="card">
+        <img id = "displayPic" src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4 id="name"><b>John Doe</b></h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+</body>
+<script>
+    const rquestUrl  = "https://api.github.com/users/darekar-uttam"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', rquestUrl)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            const data = JSON.parse(this.responseText)
+            console.log(data);
+            document.querySelector("#name").innerHTML = data.name
+            document.getElementById("displayPic").src = data.avatar_url
+        }        
+    }
+        xhr.send()
+</script>
+</html>
