@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: #414141; color: aliceblue;">
+        <ul id="ul">
+            <li id="audi">AUDI</li>
+            <li id="bmw">BMW</li>
+            <li id="merc">MERC</li>
+            <li id="volvo">VOLVO</li>
+            <p href="www.google.com" id="google">Google</p>
+        </ul>
+
+    </body>
+    <script>
+        const ul = document.getElementById("ul").addEventListener
+        ('click', function (e) { // console.log(e.target.parentNode);
+            console.log(e.target.parentNode);
+            if (e.target.tagName === 'LI') {
+                let listItem = e.target
+                listItem.remove()
+            }
+
+        }, false)
+    </script>
+</html>
